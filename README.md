@@ -21,17 +21,17 @@ Currently, the package is not published on the NPM registry and hence can't be i
 The CLI can be used by simply executing
 
 ```
-$ howto-cli
+$ howto
 ```
 
 This gives you a list of tools and technologies to choose from:
 
 ```
-system:~ user$ howto-cli 
+system:~ user$ howto
 ? selected: (Use arrow keys)
-❯ Git 
-  Unix 
-  NPM 
+❯ Git
+  Unix
+  NPM
 ```
 
 Select the option for which you wish to see the list of commands.
@@ -41,8 +41,8 @@ Select the option for which you wish to see the list of commands.
 A nice feature of Unix based CLIs is the option to `grep` the search results. This CLI tries to provide a similar behavior which can be accessed by using the CLI as:
 
 ```
-$ howto-cli -g item-to-search
-$ howto-cli -g "item to search"
-$ howto-cli --grep item-to-search
-$ howto-cli --grep "item to search"
+$ howto -g checkout
+$ howto -g "git checkout"
+$ howto --grep checkout
+$ howto --grep "git checkout"
 ```
