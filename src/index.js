@@ -13,12 +13,16 @@ const parseArgs = () => {
     .parse(process.argv);
 
   return commander.grep;
-}
+};
 
 const main = async () => {
-  const grep = (parseArgs() || '').toLowerCase();
-  const input = await question.whichTool();
-  answer.lookupInfo(input.selected, grep);
-}
+  try {
+    const grep = (parseArgs() || '').toLowerCase();
+    const input = await question.whichTool();
+    answer.lookupInfo(input.selected, grep);
+  } catch (_) {
+    console.log(`Err!! This shouldn't have happened. Please raise an issue on GitHub.`);
+  }
+};
 
 main();
