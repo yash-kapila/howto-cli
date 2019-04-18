@@ -1,22 +1,17 @@
+const fs = require('fs');
+const path = require('path');
+const util = require('util');
 const log = require('./log');
 const utils = require('./utils');
 
-const git = require('./howto/git');
-const unix = require('./howto/unix');
+const fsReadFile = util.promisify(fs.readFile);
 
-const lookupInfo = (selected, grep) => {
-  switch(selected.toLowerCase()) {
-    case 'git':
-      log.main(utils.filterCommands(git.commands, grep));
-      break;
-    case 'unix':
-      log.main(utils.filterCommands(unix.commands, grep));
-      break;
-    default:
-      console.log(`Err!! This shouldn't have happened. Please raise an issue on GitHub.`)
-  };
+const lookupInfo = async (selected, grep) => {
+  const content = await fsReadFile(path.join(__dirname, 'howto', selected + '.json'), 'utf8');
+  const commands = JSON.parse(content);
+  log.main(utils.filterCommands(commands, grep));
 };
 
 module.exports = {
   lookupInfo,
-}
+};
