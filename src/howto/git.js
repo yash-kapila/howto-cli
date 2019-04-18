@@ -29,7 +29,7 @@ const commands = [
   },
   {
     command: 'git branch -d <branch-name>',
-    description: 'Remove specified branch from local Git repository'
+    description: 'Delete specified branch from local Git repository'
   },
   {
     command: 'git push origin <branch-name>',
@@ -37,7 +37,55 @@ const commands = [
   },
   {
     command: 'git push origin <branch-name> -d',
-    description: 'Remove specified branch from remote Git repository'
+    description: 'Delete specified branch from remote Git repository'
+  },
+  {
+    command: 'git rebase develop',
+    description: 'Rebase current branch on top of develop'
+  },
+  {
+    command: 'git rebase -i HEAD~2',
+    description: 'Modifying multiple commits on the current branch'
+  },
+  {
+    command: 'git log --oneline',
+    description: 'Shows all commit logs in a sinle line description'
+  },
+  {
+    command: 'git log --graph --decorate --pretty=oneline --abbrev-commit',
+    description: 'Displays all commits in a graph format'
+  },
+  {
+    command: 'git config --local -l',
+    description: 'Lists all configurations setup for local repository'
+  },
+  {
+    command: 'git config --global -l',
+    description: 'Lists all configurations setup at a global level'
+  },
+  {
+    command: 'git config user.name ""',
+    description: 'Set a config property for local repository'
+  },
+  {
+    command: 'git config --global <property> "<value>"',
+    description: 'Set a config property at a global level'
+  },
+  {
+    command: 'git checkout develop -- test.txt',
+    description: 'Overwrite contents of test.txt in the current branch from develop'
+  },
+  {
+    command: 'git diff develop..master',
+    description: 'Display difference between develop and master branch'
+  },
+  {
+    command: 'git reset --soft HEAD~2',
+    description: 'Soft reset branch to 2 commits before HEAD'
+  },
+  {
+    command: 'git reset --hard HEAD~2',
+    description: 'Hard reset branch to 2 commits before HEAD. All unsaved changes could be lost this way.'
   },
 ];
 

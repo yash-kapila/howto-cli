@@ -43,6 +43,50 @@ const commands = [
     command: 'cat <new-file> >> <old-file>',
     description: 'Append new file contents to an old file'
   },
+  {
+    command: '[command] > [file]',
+    description: 'Write output to a file'
+  },
+  {
+    command: '[command] >> [file]',
+    description: 'Append output to an existing file'
+  },
+  {
+    command: '[command] < [file]',
+    description: 'Read contents of a file'
+  },
+  {
+    command: '[command] < [file1] > [file2]',
+    description: 'Get input from a file1 and write to file2'
+  },
+  {
+    command: '<command> | <command>',
+    description: 'Pipe one command to another'
+  },
+  {
+    command: 'lsof -i tcp:<port-number>',
+    description: 'List all processes running on specified port'
+  },
+  {
+    command: 'kill pid <process-id>',
+    description: 'Kill processes running with the specified process id'
+  },
+  {
+    command: 'kill -9 pid <process-id>',
+    description: 'Force kill processes running with the specified process id'
+  },
+  {
+    command: 'ls -l <dirname>',
+    description: 'List items in current directory with permissions'
+  },
+  {
+    command: 'chmod ugo <file>',
+    description: `Change permissions of a file. u - user's permissions, g - group's permissions, o - other's permissions`
+  },
+  {
+    command: 'ugo [0-7]',
+    description: '0 - no permission; 1 - execute only, 2 - write only, 3 - write and execute only, 4 - read only, 5 - read and execute only, 6 - read and write only, 7 - full permissions'
+  },
 ];
 
 module.exports = {
