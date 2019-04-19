@@ -12,9 +12,11 @@ This CLI is written in NodeJS and hence would need the user to have **NodeJS(10.
 
 ## Installation
 
-Currently, the package is not published on the NPM registry and hence can't be installed using NPM. Hence, the way to use the CLI is to:
+The package is not available in NPM registry and hence can't be installed using `npm install`.
+
+Hence, the way to use the CLI is to:
 1. Clone the repo
-2. Execute `npm link` from inside the directory which creates a symbolic link to the global `node_modules` directory.
+2. Execute `npm link` inside the directory which creates a symbolic link to the global `node_modules` directory.
 
 ## Usage
 
@@ -31,7 +33,6 @@ system:~ user$ howto
 ? selected: (Use arrow keys)
 ❯ Git
   Unix
-  NPM
 ```
 
 Select the option for which you wish to see the list of commands.
@@ -46,3 +47,10 @@ $ howto -g "git checkout"
 $ howto --grep checkout
 $ howto --grep "git checkout"
 ```
+## Customize commands
+
+Since the package is not installed from NPM registry, a person who wishes to use it need not depend on any version updates. Commands can be added, deleted or updated based on individual person. New sections can also be added in the dropdown for different tools and technologies.
+
+**Example:**
+
+To add a new section for NPM commands, create `NPM.json` inside `src/howto` directory. Make sure that the commands added are in a valid JSON format.

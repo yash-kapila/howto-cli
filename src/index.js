@@ -9,7 +9,7 @@ const answer = require('./answer');
 const parseArgs = () => {
   commander
     .version(packageJSON.version, '-v, --version')
-    .option('-g, --grep <grep>', 'Grepping')
+    .option('-g, --grep <grep>', 'Use this option similar to grep in Unix to search keywords')
     .parse(process.argv);
 
   return commander.grep;
