@@ -70,5 +70,37 @@
   {
     "command": "\\S",
     "description": "Matches non-whitespace character: [^\\s]"
+  },
+  {
+    "command": "?=",
+    "description": "Positive Lookahead. (T|t)he(?=\\sfat) - Match 'The' or 'the' words which are followed by word fat(preceded by a space)"
+  },
+  {
+    "command": "?!",
+    "description": "Negative Lookahead. (T|t)he(?!\\sfat) - Match 'The' or 'the' words which are NOT followed by word fat(preceded by a space)"
+  },
+  {
+    "command": "?<=",
+    "description": "Positive Lookbehind. (?<=(T|t)he\\s)(fat|mat) - Match all 'fat' or 'mat' words from input which come after the word 'the' or 'The'"
+  },
+  {
+    "command": "?<!",
+    "description": "Positive Lookbehind. (?<!(T|t)he\\s)(fat|mat) - Match all 'fat' or 'mat' words from input which DON'T come after the word 'the' or 'The'"
+  },
+  {
+    "command": "i",
+    "description": "Case insensitive match"
+  },
+  {
+    "command": "g",
+    "description": "Global search"
+  },
+  {
+    "command": "m",
+    "description": "Multiline"
+  },
+  {
+    "command": "Greedy vs Lazy matching",
+    "description": "Use ? to match in a lazy way i.e as short as possible. Eg: (.*?at) instead of (.*at)"
   }
 ]
