@@ -1,0 +1,74 @@
+[
+  {
+    "command": ".",
+    "description": "Matches any single character except a return or newline characters(line break)"
+  },
+  {
+    "command": "[]",
+    "description": "Character class. Matches any character contained between the square brackets. Use a hyphen inside a character set to specify the characters' range."
+  },
+  {
+    "command": "[^]",
+    "description": "Negative character class. Matches any character that is not contained between the square brackets"
+  },
+  {
+    "command": "*",
+    "description": "Repetitions - Matches 0 or more repetitions of the preceding symbol"
+  },
+  {
+    "command": "+",
+    "description": "Repetitions - Matches 1 or more repetitions of the preceding symbol"
+  },
+  {
+    "command": "?",
+    "description": "Repetitions - Make the preceding symbol optional"
+  },
+  {
+    "command": "{n,m}",
+    "description": "Braces. Matches at least \"n\" but not more than \"m\" repetitions of the preceding symbol"
+  },
+  {
+    "command": "(xyz)",
+    "description": "Character group. Matches the characters xyz in that exact order"
+  },
+  {
+    "command": "|",
+    "description": "Alternation. Matches either the characters before or the characters after the symbol."
+  },
+  {
+    "command": "\\",
+    "description": "Escapes the net character. This allows to match reserved characters like [ ] ( ) { } . * + ? ^ $ \\ |"
+  },
+  {
+    "command": "^",
+    "description": "Matches the beginning of the input"
+  },
+  {
+    "command": "$",
+    "description": "Matches the end of the input"
+  },
+  {
+    "command": "\\w",
+    "description": "Matches alphanumeric characters: [a-zA-Z0-9_]"
+  },
+  {
+    "command": "\\W",
+    "description": "Matches non-alphanumeric characters: [^\\w]"
+  },
+  {
+    "command": "\\d",
+    "description": "Matches digit: [0-9]"
+  },
+  {
+    "command": "\\D",
+    "description": "Matches non-digit: [^\\d]"
+  },
+  {
+    "command": "\\s",
+    "description": "Matches whitespace character"
+  },
+  {
+    "command": "\\S",
+    "description": "Matches non-whitespace character: [^\\s]"
+  }
+]

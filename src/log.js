@@ -1,50 +1,71 @@
 const constants = require('./constants');
 const utils = require('./utils');
 
-const consoleTitle = arr => {
+const columnsSeparator = () => utils.horizontalSpacing(4);
+
+const printTitle = arr => {
   console.log(
     arr.reduce((acc, elem) => acc.concat(elem), '')
   );
 };
 
-const consoleSeparator = (firstColLength, secondColLength) => {
+const printSeparator = (firstColLength, secondColLength) => {
   const item = ''
     .concat('-'.repeat(firstColLength))
-    .concat(utils.horizontalSpacing(4))
+    .concat(columnsSeparator())
     .concat('-'.repeat(secondColLength));
 
   console.log(item);
 };
 
-const createHeadings = longest => {
-  const firstHeadingLength = constants.HEADING.COMMAND.length;
-  const secondHeadingLength = constants.HEADING.DESCRIPTION.length;
-  const firstColLeftPadding = utils.horizontalSpacing((longest.command.length - firstHeadingLength)/2);
-  const firstColRightPadding = utils.horizontalSpacing((longest.command.length - firstHeadingLength)/2);
-  const columnsSeparator = utils.horizontalSpacing(4);
-  const secondColLeftPadding = utils.horizontalSpacing((longest.description.length - secondHeadingLength)/2);
-  const secondColRightPadding = utils.horizontalSpacing((longest.description.length - secondHeadingLength)/2);
+const getCellAttributes = (longest, headings) => {
+  const firstColContentLength = (longest.command.length > constants.HEADING.COMMAND.length)
+    ? longest.command.length
+    : constants.HEADING.COMMAND.length;
 
-  consoleSeparator(longest.command.length, longest.description.length);
+  const secondColContentLength = (longest.description.length > constants.HEADING.DESCRIPTION.length)
+    ? longest.description.length
+    : constants.HEADING.DESCRIPTION.length;
+  
+  const firstColPadding = (longest.command.length > headings.COMMAND.length)
+    ? (longest.command.length - headings.COMMAND.length)/2
+    : 0;
 
-  consoleTitle([
-    firstColLeftPadding,
+  const secondColPadding = (longest.description.length > headings.DESCRIPTION.length)
+    ? (longest.description.length - headings.DESCRIPTION.length)/2
+    : 0;
+
+  return {
+    firstColContentLength,
+    firstColLeftPadding: utils.horizontalSpacing(firstColPadding),
+    firstColRightPadding: utils.horizontalSpacing(firstColPadding),
+    secondColContentLength,
+    secondColLeftPadding: utils.horizontalSpacing(secondColPadding),
+    secondColRightPadding: utils.horizontalSpacing(secondColPadding),
+  };
+}
+
+const createHeadings = attributes => {
+  printSeparator(attributes.firstColContentLength, attributes.secondColContentLength);
+
+  printTitle([
+    attributes.firstColLeftPadding,
     constants.HEADING.COMMAND,
-    firstColRightPadding,
-    columnsSeparator,
-    secondColLeftPadding,
+    attributes.firstColRightPadding,
+    columnsSeparator(),
+    attributes.secondColLeftPadding,
     constants.HEADING.DESCRIPTION,
-    secondColRightPadding,
+    attributes.secondColRightPadding,
   ]);
 
-  consoleSeparator(longest.command.length, longest.description.length);
+  printSeparator(attributes.firstColContentLength, attributes.secondColContentLength);
 };
 
-const createBody = (entries, longest) => {
+const createBody = (entries, attributes) => {
   for (const item of entries) {
     const text = item.command
-      .concat(utils.horizontalSpacing(longest.command.length - item.command.length))
-      .concat(utils.horizontalSpacing(4))
+      .concat(utils.horizontalSpacing(attributes.firstColContentLength - item.command.length))
+      .concat(columnsSeparator())
       .concat(item.description);
 
       console.log(text);
@@ -53,12 +74,13 @@ const createBody = (entries, longest) => {
 
 const main = commands => {
   if (commands.length === 0) {
-    console.log('No search results for grep condition. Please try a different search criteria.')
+    console.log('No results found')
     process.exit(1);
   }
   const longest = utils.findLongestWord(commands);
-  createHeadings(longest);
-  createBody(commands, longest);
+  const attributes = getCellAttributes(longest, constants.HEADING);
+  createHeadings(attributes);
+  createBody(commands, attributes);
   console.log();
 };
 
