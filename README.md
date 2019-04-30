@@ -32,10 +32,39 @@ This gives you a list of tools and technologies to choose from:
 system:~ user$ howto
 ? selected: (Use arrow keys)
 ❯ Git
+  Regex
   Unix
 ```
 
-Select the option for which you wish to see the list of commands.
+Select the option for which you wish to see the list of commands. This will output a list of all commands for the selected option.
+
+```
+-----------------------------------------------------------    ---------------------------------------------------------------------------------------
+                          Command                                                                    Description                                      
+-----------------------------------------------------------    ---------------------------------------------------------------------------------------
+git checkout <branch-name>                                     Checkout an existing branch
+git checkout <branch-name> -b                                  Create and checkout a new branch
+git status                                                     Displays the state of the working directory and the staging area
+git diff                                                       Shows difference between commits, commit and working tree etc
+git branch                                                     List branches available locally
+git branch -r                                                  List branches available on remote
+git branch -a                                                  List all branches available locally and on remote
+git branch -d <branch-name>                                    Delete specified branch from local Git repository
+git push origin <branch-name>                                  Push all local commits in a branch to remote
+git push origin <branch-name> -d                               Delete specified branch from remote Git repository
+git rebase develop                                             Rebase current branch on top of develop
+git rebase -i HEAD~2                                           Modifying multiple commits on the current branch
+git log --oneline                                              Shows all commit logs in a sinle line description
+git log --graph --decorate --pretty=oneline --abbrev-commit    Displays all commits in a graph format
+git config --local -l                                          Lists all configurations setup for local repository
+git config --global -l                                         Lists all configurations setup at a global level
+git config user.name ""                                        Set a config property for local repository
+git config --global <property> "<value>"                       Set a config property at a global level
+git checkout develop -- test.txt                               Overwrite contents of test.txt in the current branch from develop
+git diff develop..master                                       Display difference between develop and master branch
+git reset --soft HEAD~2                                        Soft reset branch to 2 commits before HEAD
+git reset --hard HEAD~2                                        Hard reset branch to 2 commits before HEAD. All unsaved changes could be lost this way.
+```
 
 ### Grep
 
