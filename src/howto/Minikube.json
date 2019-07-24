@@ -1,0 +1,22 @@
+[
+  {
+    "command": "minikube start",
+    "description": "Starts a local kubernetes cluster using a VM"
+  },
+  {
+    "command": "minikube dashboard",
+    "description": "Access the kubernetes dashboard running within the minikube cluster in the default browser"
+  },
+  {
+    "command": "minikube ip",
+    "description": "Retrieves the IP address of the running cluster"
+  },
+  {
+    "command": "minikube delete",
+    "description": "Deletes a local kubernetes cluster. This command deletes the VM, and removes all associated files"
+  },
+  {
+    "command": "minikube status",
+    "description": "Gets the status of a local kubernetes cluster"
+  }
+]
