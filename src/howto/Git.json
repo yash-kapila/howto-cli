@@ -86,5 +86,9 @@
   {
     "command": "git reset --hard HEAD~2",
     "description": "Hard reset branch to 2 commits before HEAD. All unsaved changes could be lost this way."
+  },
+  {
+    "command": "git log --diff-filter=D --summary",
+    "description": "Get all deleted files from Git history"
   }
 ]
