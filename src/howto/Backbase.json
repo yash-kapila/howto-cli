@@ -1,0 +1,30 @@
+[
+  {
+    "command": "bb-package project collection-aib/src",
+    "description": "Package a project and create a provisioning package for WC2 collection"
+  },
+  {
+    "command": "bb-import project package.zip --portal-version 6.2 --portal-port 8080  --portal-context /gateway/api",
+    "description": "Import a provisioning package to CX environment(WC2 or WC3)"
+  },
+  {
+    "command": "bb-watch project --portal-version 6.2 --portal-port 8080  --portal-context /gateway/api",
+    "description": "Watch WC2 project and import changes automatically"
+	},
+	{
+    "command": "mvn package bb:provision",
+    "description": "Provision WC2 collection using bb-maven plugin"
+	},
+	{
+    "command": "mvn package bb:provision -Pwa3",
+    "description": "Provision WC2 & WC3 collections using bb-maven plugin"
+  },
+	{
+    "command": "mvn package bb:provision -Pwa3,include-dependencies",
+    "description": "Provision WC2, WC3 and all WC2 OOTB collections using bb-maven plugin"
+  },
+	{
+    "command": "mvn bb:import-experiences",
+    "description": "Import all project portal zips to a CX environment"
+  }
+]

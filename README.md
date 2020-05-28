@@ -12,11 +12,10 @@ This CLI is written in NodeJS and hence would need the user to have **NodeJS(10.
 
 ## Installation
 
-The package is not available in NPM registry and hence can't be installed using `npm install`.
-
 Hence, the way to use the CLI is to:
 1. Clone the repo
-2. Execute `npm link` inside the directory which creates a symbolic link to the global `node_modules` directory.
+2. Execute `npm install`
+3. Execute `npm link` inside the directory which creates a symbolic link to the global `node_modules` directory.
 
 ## Usage
 
