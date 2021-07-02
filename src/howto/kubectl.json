@@ -1,0 +1,58 @@
+[
+  {
+    "command": "kubectl config current-context",
+    "description": "Displays the current-context"
+  },
+  {
+    "command": "kubectl config delete-cluster",
+    "description": "Delete the specified cluster from the kubeconfig"
+  },
+  {
+    "command": "kubectl config delete-context",
+    "description": "Delete the specified context from the kubeconfig"
+  },
+  {
+    "command": "kubectl config set-context",
+    "description": "Sets a context entry in kubeconfig"
+  },
+  {
+    "command": "kubectl config update-context",
+    "description": "Sets the current-context in a kubeconfig file"
+  },
+  {
+    "command": "kubectl get all",
+    "description": "Get all current active K8S objects"
+  },
+  {
+    "command": "kubectl get pods",
+    "description": "Get all current active pods"
+  },
+  {
+    "command": "kubectl get services",
+    "description": "Get all current active services"
+  },
+  {
+    "command": "kubectl get deployments",
+    "description": "Get all current active deployments"
+  },
+  {
+    "command": "kubectl apply -f <object>.yaml",
+    "description": "Create if not existing, otherwise apply changes to a k8s object"
+  },
+  {
+    "command": "kubectl create -f <object>.yaml",
+    "description": "Create a k8s object"
+  },
+  {
+    "command": "kubectl delete deployments --all",
+    "description": "Delete all active deployments"
+  },
+  {
+    "command": "kubectl delete deployment <deployment-name>",
+    "description": "Delete specified deployment"
+  },
+  {
+    "command": "kubectl delete service <service-name>",
+    "description": "Delete specified service"
+  }
+]

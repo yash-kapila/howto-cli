@@ -1,0 +1,22 @@
+[
+  {
+    "command": "gcloud container clusters",
+    "description": "Deploy and teardown GKE clusters"
+  },
+  {
+    "command": "gcloud container clusters create <cluster-name>",
+    "description": "Create a new cluster"
+  },
+  {
+    "command": "gcloud container clusters delete <cluster-name>",
+    "description": "Delete a cluster"
+  },
+  {
+    "command": "gcloud container clusters list",
+    "description": "List existing clusters"
+  },
+  {
+    "command": "gcloud container clusters get-credentials <cluster-name>",
+    "description": "Updates kubeconfig with appropriate credentials and endpoint information to point kubectl at a specific cluster in Google Kubernetes Engine"
+  }
+]

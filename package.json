@@ -18,8 +18,8 @@
   "author": "HYF",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.20.0",
-    "glob": "^7.1.3",
-    "inquirer": "^6.3.1"
+    "commander": "^2.20.3",
+    "glob": "^7.1.7",
+    "inquirer": "^6.5.2"
   }
 }
