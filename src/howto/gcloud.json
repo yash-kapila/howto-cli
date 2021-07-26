@@ -18,5 +18,21 @@
   {
     "command": "gcloud container clusters get-credentials <cluster-name>",
     "description": "Updates kubeconfig with appropriate credentials and endpoint information to point kubectl at a specific cluster in Google Kubernetes Engine"
+  },
+  {
+    "command": "gcloud compute ssh <node_name>",
+    "description": "Login to one of the nodes of K8S cluster and explore"
+  },
+  {
+    "command": "gcloud machine-types list",
+    "description": "List all compute machines available in G Cloud"
+  },
+  {
+    "command": "gcloud container clusters resize $CLUSTER_NAME --num-nodes=0",
+    "description": "Resize nodes to 0 for a cluster if not using. Important for practice exercises to reduce cost"
+  },
+  {
+    "command": "gcloud container clusters create kubia --num-nodes 3 --machine-type e2-micro",
+    "description": "Create a K8S cluster with X nodes and pick Y machine type"
   }
 ]

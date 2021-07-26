@@ -18,5 +18,17 @@
   {
     "command": "minikube status",
     "description": "Gets the status of a local kubernetes cluster"
+  },
+  {
+    "command": "minikube service <service-name>",
+    "description": "Mimics providing external IP to a service so it is accessible outside k8s cluster on localhost"
+  },
+  {
+    "command": "minikube addons list",
+    "description": "Lists all available addon features of minikube"
+  },
+  {
+    "command": "minikube addons enable ingress",
+    "description": "Enable Ingress in minikube"
   }
 ]

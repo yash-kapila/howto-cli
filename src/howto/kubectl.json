@@ -36,6 +36,14 @@
     "description": "Get all current active deployments"
   },
   {
+    "command": "kubectl describe <object> <object_name>",
+    "description": "Prints a detailed view of selected k8s object such as pod, service, node etc"
+  },
+  {
+    "command": "kubectl get nodes",
+    "description": "Get all nodes within the cluster"
+  },
+  {
     "command": "kubectl apply -f <object>.yaml",
     "description": "Create if not existing, otherwise apply changes to a k8s object"
   },
@@ -54,5 +62,33 @@
   {
     "command": "kubectl delete service <service-name>",
     "description": "Delete specified service"
+  },
+  {
+    "command": "kubectl cluster-info",
+    "description": "Shows basic info of current cluster"
+  },
+  {
+    "command": "kubectl get pods -o wide",
+    "description": "Describes a pod but additionally provides which node the pod is deployed in"
+  },
+  {
+    "command": "kubectl get pod <pod_name> -o yaml",
+    "description": "Describes a pod in YAML definition"
+  },
+  {
+    "command": "kubectl explain pods",
+    "description": "Provides an overview on different fields which can be provided in a K8S pod object definition"
+  },
+  {
+    "command": "kubectl explain pod.spec",
+    "description": "Provides an overview on different fields which can be provided in a K8S pod's spec definition"
+  },
+  {
+    "command": "kubectl port-forward <pod_name> <host_port>:<pod_port>",
+    "description": "Port forwarding enables us to connect to a port within a pod from the host machine"
+  },
+  {
+    "command": "kubectl get componentstatuses",
+    "description": "Shows health status of each control plane component i.e etcd, controller-manager & scheduler"
   }
 ]
